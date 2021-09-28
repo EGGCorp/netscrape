@@ -13,13 +13,15 @@
     "url": "git+https://github.com/EGGCorp/netscrape.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "George, Eric, Graham",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/EGGCorp/netscrape/issues"
   },
   "homepage": "https://github.com/EGGCorp/netscrape#readme",
   "dependencies": {
+    "@emotion/react": "^11.4.1",
+    "@emotion/styled": "^11.3.0",
     "@material-ui/core": "^4.12.3",
     "@material-ui/icons": "^4.11.2",
     "@mui/material": "^5.0.1",
