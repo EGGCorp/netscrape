@@ -11,3 +11,5 @@ dbController.getMovies = (req, res, next) => {
     db
         .query()
 }
+
+module.exports = dbController;
