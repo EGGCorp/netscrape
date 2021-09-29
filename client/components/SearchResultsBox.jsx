@@ -1,38 +1,20 @@
 import React from 'react';
-
+import MovieCard from './MovieCard.jsx';
 
 const SearchResultsBox = (props) => {
-  console.log(props, 'props in result box')
-    
-      console.log(props.list, 'props.list');
+  // console.log(props, 'props in result box')
+  // console.log(props.list, 'props.list');
       
       return (
-    
-        <ul className="searchResultList">
+        <div className="searchResultList">
           {props.list.map((movie) => {
-      return (
-      <div key={movie.id}>
-        <ul>
-          <li>Title: {movie.title}</li>
-          <li><img src={movie.poster}></img></li>
-          <li>
-            <ul className="countryList">
-              {Object.values(movie.clist).map((country) => {
-                return (
-                  <li>{country}</li>
-                )
-              })}
-            </ul>
-          </li>
-          <li>IMDB Rating: {movie.imdbrating}</li>
-          <li>Synopsis: {movie.synopsis}</li>
-        </ul>
-        <br></br>
-      </div>
-      
-      )
-    })}
-        </ul>
+            return (
+              <div key={movie.id}>
+                <MovieCard id="MovieCard" title={movie.title} poster={movie.poster} countrylist={movie.clist} rating={movie.imdbrating} synopsis={movie.synopsis} year={movie.titledate}/>
+              </div>
+            )
+          })}
+        </div>
       )
     
     //   sx={{

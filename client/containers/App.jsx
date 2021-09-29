@@ -23,24 +23,26 @@ class App extends Component {
       const value = e.target.value;
       const movieList = await getMovies(value);
       //const movies = [];
-      console.log('movie list', movieList);
+      // console.log('movie list', movieList);
       this.setState({ searchedTitle: e.target.value }, () => {
-        console.log('this is the setState', this.state.searchedTitle)
+        // console.log('this is the setState', this.state.searchedTitle)
         this.setState({searchResults: movieList})
-        console.log(movieList, 'movieList after API call');
+        // console.log(movieList, 'movieList after API call');
       })
     }
   } 
 
 
   render() {
-    console.log('state in render',this.state)
+    // console.log('state in render',this.state)
     return (
       <div id='app'>
         <h1>Netscrape</h1>
+        <div id='searchBarDiv'>
+          <SearchBar onKeyUp={this.onKeyUp}/>
+        </div>
         <div className='container'>
           <div className='mainContent'>
-            <SearchBar id='searchBar' onKeyUp={this.onKeyUp}/>
             <SearchResultsBox id='searchResultsBox' list={this.state.searchResults}/>
           </div>
         <div className='rightSideBar'>
