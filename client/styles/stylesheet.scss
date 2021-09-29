@@ -1,5 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+
 html {
   background-color: rgba(82, 78, 78, 0.733);
+  font-family: "Ubuntu", sans-serif;
+  height: 100%;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
+#app {
+  height: 100%;
+}
+.container {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+  grid-template-rows: 80% 20%;
+  grid-template-areas:
+    " sidebar main main sidebar"
+    " footer footer footer footer";
+}
+
+.leftSideBar {
+  grid-area: sidebar;
+}
+
+.rightSideBar {
+  grid-area: sidebar;
+  background-color: red;
+  grid-column-start: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mainContent {
+  grid-area: main;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.footer {
+  grid-area: footer;
+  grid-column-start: 1;
+  grid-row-start: 2;
+  background-color: green;
 }
 
 #outlined-basic {
