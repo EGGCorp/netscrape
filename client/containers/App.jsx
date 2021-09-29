@@ -4,6 +4,7 @@ import SearchResultsBox from '../components/SearchResultsBox.jsx';
 import getMovies from '../../api/movieFetch.js';
 import Box from '@mui/material/Box';
 import MovieCard from '../components/MovieCard.jsx';
+//import dbController from '../../server/dbController.js';
 
 class App extends Component {
   constructor() {
@@ -16,6 +17,14 @@ class App extends Component {
     this.onKeyUp = this.onKeyUp.bind(this)
   }
   
+  async getDBMovies() {
+    await fetch('/routes/test', {
+      method: 'GET'
+    })
+      .then((res) => res.json())
+      .then((movies) => console.log('In App.jsx, in getBDMOvies, Results: ', movies))
+      .catch(err => console.log('In App.jsx, in getBDMOvies, Error: ', err))
+  }
   
   async onKeyUp(e) {
     if (e.charCode === 13){
@@ -29,6 +38,8 @@ class App extends Component {
         this.setState({searchResults: movieList})
         // console.log(movieList, 'movieList after API call');
       })
+      //console.log(dbController)
+      this.getDBMovies()
     }
   } 
 
