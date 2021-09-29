@@ -1,31 +1,19 @@
 import React from 'react';
-// import Box from '@mui/material/Box';
+
 
 const SearchResultsBox = (props) => {
-  
-    // if (!props.results.length) {
-      
-    //  return ( <Box  
-    //     sx={{
-    //       width: 'full',
-    //       height: 300,
-    //       bgcolor: 'primary.dark',
-    //       '&:hover': {
-    //         backgroundColor: 'primary.main',
-    //         opacity: [0.9, 0.8, 0.7],
-    //       },
-    //     }}
-    //   />)
-    // } else {
-      // const listItems = props.results.map((movie) => {
-      //   <li key={movie.id}>movie.title</li>
-      // })
+  console.log(props, 'props in result box')
+    
+      console.log(props.list, 'props.list');
       return (
+    
         <ul className="searchResultList">
-          {list}
+          {props.list.map((movie) => {
+      return <li key={movie.id}>{movie.title}</li>
+    })}
         </ul>
       )
-    //}
+    
 }
 
 // { id: 60809, title: "Sex Education", img: "https://occ-0-2851-38.1.nflxso.net/dnm/api/v6/evlCitJPPCVCry…1yciosgK-HiCApIEI2f1WS-60J8dv4NNh59iXV6U_SAlO2uD6w.jpg?r=5cf", … }

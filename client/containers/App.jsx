@@ -25,26 +25,34 @@ class App extends Component {
       console.log('movie list', movieList);
       this.setState({ searchedTitle: e.target.value }, () => {
         console.log('this is the setState', this.state.searchedTitle)
-      
+        this.setState({searchResults: movieList})
+        console.log(movieList, 'movieList after API call');
       })
       
     }
   } 
   
-    listItems = this.searchResults.map((movie) => {
-      <li key={movie.id}>movie.title</li>
-    })
+    
   
   
   render() {
-
-    return (
-      <div>
-        <SearchBar onKeyUp={this.onKeyUp}/>
-        <SearchResultsBox list={listItems}/>
-      </div>
-      
-    )
+    
+    if (this.state.searchResults.length) {
+      return (
+        <div>
+          <SearchBar onKeyUp={this.onKeyUp}/>
+          <SearchResultsBox list={this.state.searchResults}/>
+        </div>
+        
+      )
+    } else {
+      return (
+        <div>
+          <SearchBar onKeyUp={this.onKeyUp}/>
+        </div>
+      )
+    }
+    
   }
 }
 
