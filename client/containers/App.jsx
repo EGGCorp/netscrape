@@ -2,11 +2,8 @@ import React, { Component } from 'react';
 import SearchBar from '../components/SearchBar.jsx';
 import SearchResultsBox from '../components/SearchResultsBox.jsx';
 import getMovies from '../../api/movieFetch.js';
-<<<<<<< HEAD
-import dbController from '../../server/dbController.js';
-=======
 import MovieCard from '../components/MovieCard.jsx';
->>>>>>> 55efee588ec80315e228d39a619f4054a13e704d
+//import dbController from '../../server/dbController.js';
 
 class App extends Component {
   constructor() {
@@ -31,11 +28,8 @@ class App extends Component {
         console.log('this is the setState', this.state.searchedTitle)
       
       })
-<<<<<<< HEAD
-      dbController.getMoviesTest()
-      
-=======
->>>>>>> 55efee588ec80315e228d39a619f4054a13e704d
+      //console.log(dbController)
+      //dbController.getMoviesTest()
     }
   } 
 
