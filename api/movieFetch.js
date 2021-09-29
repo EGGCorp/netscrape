@@ -1,10 +1,10 @@
 const axios = require("axios").default;
-const { fetchCountryData } = require('./countryFetch.js');
+const regeneratorRuntime = require("regenerator-runtime");
+//const { fetchCountryData } = require('./countryFetch.js');
 
 
 async function getMovies (movie) {
   //const countryData = await fetchCountryData();
-  let movieCountries;
   const options = {
     method: 'GET',
     url: 'https://unogsng.p.rapidapi.com/search',
@@ -28,7 +28,7 @@ async function getMovies (movie) {
     }
   };
 
-  const movieData = await axios.request(options).then(async function (response) {
+  const movieData = await axios.request(options).then(function (response) {
 	  //console.log(response.data.results[0].clist);
     //fetchCountryData();
     return response.data;
@@ -83,4 +83,5 @@ async function getMovies (movie) {
   return(movieData.results);
 }
 //getMovies();
-module.exports = { getMovies }
+//module.exports = { getMovies }
+export default getMovies;
