@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import SearchBar from '../components/SearchBar.jsx';
 import SearchResultsBox from '../components/SearchResultsBox.jsx';
 import getMovies from '../../api/movieFetch.js';
-
+import dbController from '../../server/dbController.js';
 
 class App extends Component {
   constructor() {
@@ -26,6 +26,7 @@ class App extends Component {
         console.log('this is the setState', this.state.searchedTitle)
       
       })
+      dbController.getMoviesTest()
       
     }
   } 
