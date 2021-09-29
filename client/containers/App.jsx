@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import SearchBar from '../components/SearchBar.jsx';
 import SearchResultsBox from '../components/SearchResultsBox.jsx';
 import getMovies from '../../api/movieFetch.js';
+import Box from '@mui/material/Box';
 
 
 class App extends Component {
@@ -9,7 +10,7 @@ class App extends Component {
     super();
     this.state = {
       searchedTitle: 'string',
-      searchResults: {},
+      searchResults: [],
     }
     
     this.onKeyUp = this.onKeyUp.bind(this)
@@ -29,13 +30,18 @@ class App extends Component {
       
     }
   } 
-
+  
+    listItems = this.searchResults.map((movie) => {
+      <li key={movie.id}>movie.title</li>
+    })
+  
+  
   render() {
 
     return (
       <div>
         <SearchBar onKeyUp={this.onKeyUp}/>
-        <SearchResultsBox value={this.searchResults}/>
+        <SearchResultsBox list={listItems}/>
       </div>
       
     )
