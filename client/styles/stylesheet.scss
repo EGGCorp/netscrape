@@ -65,3 +65,25 @@ body {
 #outlined-basic {
   align-self: center;
 }
+
+.searchResultList {
+  display: flex;
+  flex-flow: row wrap;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.css-1ri6ub7-MuiPaper-root-MuiCard-root {
+  -webkit-box-shadow: 0px 1px 15px 7px rgba(0,0,0,0.71); 
+  box-shadow: 0px 1px 15px 7px rgba(0,0,0,0.71);
+  padding: 3px;
+}
+
+#searchBarDiv {
+  display: flex;
+  justify-content: center;
+}
+
+#search-bar {
+  width: 40%;
+}

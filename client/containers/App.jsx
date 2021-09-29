@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import SearchBar from '../components/SearchBar.jsx';
 import SearchResultsBox from '../components/SearchResultsBox.jsx';
 import getMovies from '../../api/movieFetch.js';
+import Box from '@mui/material/Box';
 import MovieCard from '../components/MovieCard.jsx';
 //import dbController from '../../server/dbController.js';
 
@@ -31,10 +32,11 @@ class App extends Component {
       const value = e.target.value;
       const movieList = await getMovies(value);
       //const movies = [];
-      console.log('movie list', movieList);
+      // console.log('movie list', movieList);
       this.setState({ searchedTitle: e.target.value }, () => {
-        console.log('this is the setState', this.state.searchedTitle)
-      
+        // console.log('this is the setState', this.state.searchedTitle)
+        this.setState({searchResults: movieList})
+        // console.log(movieList, 'movieList after API call');
       })
       //console.log(dbController)
       this.getDBMovies()
@@ -43,14 +45,16 @@ class App extends Component {
 
 
   render() {
-    console.log('state in render',this.state)
+    // console.log('state in render',this.state)
     return (
       <div id='app'>
         <h1>Netscrape</h1>
+        <div id='searchBarDiv'>
+          <SearchBar onKeyUp={this.onKeyUp}/>
+        </div>
         <div className='container'>
           <div className='mainContent'>
-            <SearchBar id='searchBar' onKeyUp={this.onKeyUp}/>
-            <SearchResultsBox id='searchResultsBox'value={this.searchResults}/>
+            <SearchResultsBox id='searchResultsBox' list={this.state.searchResults}/>
           </div>
         <div className='rightSideBar'>
           <h2>Top Rated Movies</h2>
