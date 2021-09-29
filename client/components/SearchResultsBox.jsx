@@ -5,6 +5,7 @@ const SearchResultsBox = (props) => {
   console.log(props, 'props in result box')
     
       console.log(props.list, 'props.list');
+      
       return (
     
         <ul className="searchResultList">
@@ -14,6 +15,15 @@ const SearchResultsBox = (props) => {
         <ul>
           <li>Title: {movie.title}</li>
           <li><img src={movie.poster}></img></li>
+          <li>
+            <ul className="countryList">
+              {Object.values(movie.clist).map((country) => {
+                return (
+                  <li>{country}</li>
+                )
+              })}
+            </ul>
+          </li>
           <li>IMDB Rating: {movie.imdbrating}</li>
           <li>Synopsis: {movie.synopsis}</li>
         </ul>
@@ -25,6 +35,17 @@ const SearchResultsBox = (props) => {
         </ul>
       )
     
+    //   sx={{
+    //     width: 'full',
+    //     height: '100%',
+    //     bgcolor: 'primary.dark',
+    //     '&:hover': {
+    //       backgroundColor: 'primary.main',
+    //       opacity: [0.9, 0.8, 0.7],
+    //     },
+    //   }}
+    // />
+  //)
 }
 
 // { id: 60809, title: "Sex Education", img: "https://occ-0-2851-38.1.nflxso.net/dnm/api/v6/evlCitJPPCVCry…1yciosgK-HiCApIEI2f1WS-60J8dv4NNh59iXV6U_SAlO2uD6w.jpg?r=5cf", … }
