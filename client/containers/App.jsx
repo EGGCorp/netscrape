@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import SearchBar from '../components/SearchBar.jsx';
 import SearchResultsBox from '../components/SearchResultsBox.jsx';
+import getMovies from '../../api/movieFetch.js';
+
 
 class App extends Component {
   constructor() {
@@ -14,9 +16,12 @@ class App extends Component {
   }
   
   
-  onKeyUp(e) {
+  async onKeyUp(e) {
     if (e.charCode === 13){
       console.log(e.target.value)
+      const value = e.target.value;
+      const movieList = await getMovies(value);
+      console.log('movie list', movieList);
       this.setState({ searchedTitle: e.target.value }, () => {
         console.log('this is the setState', this.state.searchedTitle)
       
