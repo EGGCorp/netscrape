@@ -2,19 +2,19 @@ const db = require('./models');
 
 const dbController = {};
 
-dbController.addMovies = (queryValue) => {
+dbController.addMovies = (req, res, next) => {
     const q = ''
     db
         .query(q)
 }
 
-dbController.getMovies = (queryValue) => {
+dbController.getMovies = (req, res, next) => {
     const q = 'Select * from movies where ' + queryValue + ''
     db
         .query(q)
 }
 
-dbController.getMoviesTest = () => {
+dbController.getMoviesTest = (req, res, next) => {
     const q = 'Select * from movies'
     db
         .query(q)
