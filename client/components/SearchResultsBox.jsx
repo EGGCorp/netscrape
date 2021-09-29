@@ -9,7 +9,7 @@ const SearchResultsBox = () => {
       
       sx={{
         width: 'full',
-        height: 300,
+        height: '100%',
         bgcolor: 'primary.dark',
         '&:hover': {
           backgroundColor: 'primary.main',
