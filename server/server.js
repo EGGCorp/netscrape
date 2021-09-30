@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-
+const routes = require('./routes');
 
 // parse incoming data
 app.use(express.json());
@@ -11,7 +11,8 @@ app.use('/build', express.static(path.join(__dirname, '../build/')));
 app.get('/', (req, res) => {
   return res.status(200).sendFile(path.resolve(__dirname, '../index.html'));
 });
-
+//handles db calls
+app.use('/routes', routes);
 
 //catch all route handler, handles request to an unknown route
 app.use((req, res) =>
