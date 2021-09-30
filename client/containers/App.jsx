@@ -42,7 +42,7 @@ class App extends Component {
       this.getDBMovies()
     }
   } 
-
+  
 
   render() {
     // console.log('state in render',this.state)
