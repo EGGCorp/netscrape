@@ -1,7 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
 
 html {
-  background-color: rgba(82, 78, 78, 0.733);
+  background: rgb(217, 194, 235);
+  background: linear-gradient(
+    150deg,
+    rgba(217, 194, 235, 1) 18%,
+    rgba(231, 222, 192, 1) 63%,
+    rgba(255, 226, 254, 1) 100%
+  );
   font-family: "Ubuntu", sans-serif;
   height: 100%;
 }
@@ -12,7 +18,8 @@ h1 {
 }
 
 body {
-  height: 100%;
+  height: 90%;
+  //overflow-y: hidden;
 }
 
 #root {
@@ -23,32 +30,71 @@ body {
   height: 100%;
 }
 .container {
-  height: 100%;
+  height: 85%;
   display: grid;
   grid-template-columns: 20% 60% 20%;
-  grid-template-rows: 80% 20%;
+  grid-template-rows: 15% 80% 5%;
   grid-template-areas:
+    " sidebar header header sidebar"
     " sidebar main main sidebar"
     " footer footer footer footer";
 }
 
 .leftSideBar {
   grid-area: sidebar;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column-start: 1;
+  grid-column-end: 2;
 }
 
 .rightSideBar {
+  height: 100%;
   grid-area: sidebar;
-  background-color: red;
+  //background-color: red;
   grid-column-start: 3;
   grid-row-start: 1;
-  grid-row-end: 2;
+  grid-row-end: 3;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 1rem;
+  border-radius: 25px;
+  -moz-border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -webkit-box-shadow: 15px 11px 75px 10px #000000;
+  -moz-box-shadow: 15px 11px 75px 10px #000000;
+  box-shadow: 15px 11px 75px 10px #000000;
+}
+
+::-webkit-scrollbar {
+  width: 11px;
+  height: 11px;
+}
+::-webkit-scrollbar-thumb {
+  background: radial-gradient(circle, #f0cfa8 30%, #edc0ed 66%);
+  border: 0.2px solid #948c8c;
+  border-radius: 22px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: radial-gradient(circle, #fff1e0 18%, #e092e0 77%);
+}
+::-webkit-scrollbar-track {
+  background: #edced3;
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 0px 0px #000000;
 }
 
 .mainContent {
   grid-area: main;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+.headerBox {
+  grid-area: header;
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 1;
@@ -58,8 +104,10 @@ body {
 .footer {
   grid-area: footer;
   grid-column-start: 1;
-  grid-row-start: 2;
-  background-color: green;
+  grid-row-start: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #outlined-basic {
@@ -73,12 +121,6 @@ body {
   overflow-y: auto;
 }
 
-.css-1ri6ub7-MuiPaper-root-MuiCard-root {
-  -webkit-box-shadow: 0px 1px 15px 7px rgba(0,0,0,0.71); 
-  box-shadow: 0px 1px 15px 7px rgba(0,0,0,0.71);
-  padding: 3px;
-}
-
 #searchBarDiv {
   display: flex;
   justify-content: center;
@@ -86,4 +128,32 @@ body {
 
 #search-bar {
   width: 40%;
+}
+
+.movie-div {
+  padding: 10px;
+  height: 450px;
+}
+
+p {
+  padding-bottom: 2px;
+}
+
+.rightSideBarContent {
+  overflow-y: auto;
+  height: 85%;
+}
+
+.appDesc {
+  display: flex;
+  justify-content: center;
+}
+
+h3 {
+  text-align: center;
+}
+
+.logo {
+  margin: auto;
+  display: block;
 }

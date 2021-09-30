@@ -5,10 +5,13 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { shadows } from '@mui/system';
 
 export default function ImgMediaCard(props) {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ 
+      maxWidth: 345,
+       boxShadow: 10,}}>
       <CardMedia
         component="img"
         alt="movie or show poster not available"
@@ -20,22 +23,18 @@ export default function ImgMediaCard(props) {
           {props.title}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          {props.year}
+          Date Released: {props.year}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          {props.rating}
+          IMDB Rating: {props.rating}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body2">
           {props.synopsis}
         </Typography>
         <Typography variant="body2" color="text.secondary">
         Available in: {Object.values(props.countrylist).join(", ")}
         </Typography>
       </CardContent>
-      <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
-      </CardActions>
     </Card>
   );
 }

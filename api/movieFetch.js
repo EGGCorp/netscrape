@@ -3,7 +3,7 @@ const regeneratorRuntime = require("regenerator-runtime");
 //const { fetchCountryData } = require('./countryFetch.js');
 
 
-async function getMovies (movie) {
+async function getMovies (movie, limit = '100') {
   //const countryData = await fetchCountryData();
   const options = {
     method: 'GET',
@@ -13,7 +13,7 @@ async function getMovies (movie) {
       start_year: '1972',
       orderby: 'rating',
       audiosubtitle_andor: 'and',
-      limit: '100',
+      limit: limit,
       subtitle: '',
       countrylist: '',
       query: movie,

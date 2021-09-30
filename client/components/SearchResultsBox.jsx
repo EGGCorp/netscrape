@@ -9,8 +9,8 @@ const SearchResultsBox = (props) => {
         <div className="searchResultList">
           {props.list.map((movie) => {
             return (
-              <div key={movie.id}>
-                <MovieCard id="MovieCard" title={movie.title} poster={movie.poster} countrylist={movie.clist} rating={movie.imdbrating} synopsis={movie.synopsis} year={movie.titledate}/>
+              <div key={movie.id} className="movie-div">
+                <MovieCard title={movie.title} poster={movie.poster} countrylist={movie.clist} rating={movie.imdbrating} synopsis={movie.synopsis} year={movie.titledate}/>
               </div>
             )
           })}
